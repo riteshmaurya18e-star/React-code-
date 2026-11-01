@@ -1,0 +1,67 @@
+import React, { useState } from "react";
+
+function App() {
+  const [color, setColor] = useState("");
+
+  return (
+    <div style={styles.container}>
+      <h1>Color Selection Using React Hooks</h1>
+
+      <div>
+        <button
+          style={{ ...styles.button, backgroundColor: "#ffb3b3" }}
+          onClick={() => setColor("Red")}
+        >
+          Red
+        </button>
+
+        <button
+          style={{ ...styles.button, backgroundColor: "#b3d9ff" }}
+          onClick={() => setColor("Blue")}
+        >
+          Blue
+        </button>
+
+        <button
+          style={{ ...styles.button, backgroundColor: "#b3e6b3" }}
+          onClick={() => setColor("Green")}
+        >
+          Green
+        </button>
+
+        <button
+          style={{ ...styles.button, backgroundColor: "#fff2b3" }}
+          onClick={() => setColor("Yellow")}
+        >
+          Yellow
+        </button>
+      </div>
+
+      {color && (
+        <h2>You have selected {color} color.</h2>
+      )}
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    fontFamily: "Arial"
+  },
+  button: {
+    padding: "12px 25px",
+    margin: "10px",
+    fontSize: "18px",
+    border: "none",
+    borderRadius: "8px",
+    cursor: "pointer"
+  }
+};
+
+export default App;
